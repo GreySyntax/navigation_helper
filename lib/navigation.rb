@@ -61,7 +61,7 @@ module RPH
       # builds the actual link and determines if subtitles are present
       def construct(nav, section)
         text = nav.text_for(section)
-        path = ROUTES[section.to_sym] || send("#{section.to_s.downcase}_path")
+        path = ROUTES[section.to_sym] || send("#{section.to_s.downcase}_url")
         link = link_to(text, path)
 
         link = link_to(text, path, :title => SUBTITLES[section]) if nav.wants_hover_text?
