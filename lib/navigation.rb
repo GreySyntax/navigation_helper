@@ -54,7 +54,7 @@ module RPH
         end
         
         return '' if items.blank?
-        content_tag(:ul, items, :class => 'navigation')
+        content_tag(:ul, raw(items), :class => 'navigation')
       end
       
       private
